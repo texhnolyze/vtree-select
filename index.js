@@ -104,11 +104,11 @@ function mapTree(vtree, parent, options) {
     node.tagName = normalizeTagCase(vtree.tagName);
     if (vtree.properties) {
       node.properties = vtree.properties;
-      if (typeof vtree.properties.className === "string") {
-        node.className = vtree.properties.className;
+      if (typeof vtree.properties.attributes.class === "string") {
+        node.className = vtree.properties.attributes.class;
       }
-      if (typeof vtree.properties.id === "string") {
-        node.id = vtree.properties.id;
+      if (typeof vtree.properties.attributes.id === "string") {
+        node.id = vtree.properties.attributes.id;
       }
     }
     if (vtree.children && typeof vtree.children.map === "function") {
